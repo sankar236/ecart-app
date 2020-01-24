@@ -1,0 +1,35 @@
+<app-sort></app-sort>
+<div class="row" *ngFor="let row of rows; let i=index">
+    <div *ngIf="((i*4+0)<shoppingItems.length)" class="col-md-3">
+        <div class=" product-container">
+            <img src="https://www.freepnglogos.com/uploads/laptop-png/laptop-transparent-png-pictures-icons-and-png-7.png">
+            <div class="item">{{shoppingItems[i*4+0].name}}</div>
+            <div class="item-details">₹ {{shoppingItems[i*4+0].price}} <span class="mrp">900</span><span class="offer">{{shoppingItems[i*4+0].discount}}% off</span></div>
+            <button type="button" class="btn btn-warning btn-cart" (click)="addItemToCart(i*4+0)">Add to Cart</button>
+        </div>
+    </div>
+    <div *ngIf="((i*4+1)<shoppingItems.length)" class="col-md-3">
+        <div class=" product-container">
+            <img src="https://www.freepnglogos.com/uploads/laptop-png/laptop-transparent-png-pictures-icons-and-png-7.png">
+            <div class="item">{{shoppingItems[i*4+1].name}}</div>
+            <div class="item-details">₹ {{shoppingItems[i*4+1].price}} <span class="mrp">900</span><span class="offer">{{shoppingItems[i*4+1].discount}}% off</span></div>
+            <button type="button" class="btn btn-warning btn-cart" (click)="addItemToCart(i*4+1)">Add to Cart</button>
+        </div>
+    </div>
+    <div *ngIf="((i*4+2)<shoppingItems.length)" class="col-md-3">
+        <div class=" product-container">
+            <img src="https://www.freepnglogos.com/uploads/laptop-png/laptop-transparent-png-pictures-icons-and-png-7.png">
+            <div class="item">{{shoppingItems[i*4+2].name}}</div>
+            <div class="item-details">₹ {{shoppingItems[i*4+2].price}} <span class="mrp">900</span><span class="offer">{{shoppingItems[i*4+2].discount}}% off</span></div>
+            <button type="button" class="btn btn-warning btn-cart" (click)="addItemToCart(i*4+2)">Add to Cart</button>
+        </div>
+    </div>
+    <div *ngIf="((i*4+3)<shoppingItems.length)" class="col-md-3">
+        <div class=" product-container">
+            <img src="https://www.freepnglogos.com/uploads/laptop-png/laptop-transparent-png-pictures-icons-and-png-7.png">
+            <div class="item">{{shoppingItems[i*4+3].name}}</div>
+            <div class="item-details">₹ {{shoppingItems[i*4+3].price}} <span class="mrp">900</span><span class="offer">{{shoppingItems[i*4+3].discount}}% off</span></div>
+            <button type="button" class="btn btn-warning btn-cart" (click)="addItemToCart(i*4+3)">Add to Cart</button>
+        </div>
+    </div>  
+</div>

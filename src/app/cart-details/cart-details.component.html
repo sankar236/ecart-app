@@ -1,0 +1,43 @@
+<div class="row" *ngFor="let item of totalCartItems; let i=index">
+    <div class="col-md-3">
+        <div class=" product-container">
+            <span><img src="https://www.freepnglogos.com/uploads/laptop-png/laptop-transparent-png-pictures-icons-and-png-7.png"></span>
+            <span>
+                <div class="item">{{item.name}}</div>
+                <div class="item-details">₹ {{item.price}} <span class="mrp">900</span><span class="offer">{{item.discount}}% off</span></div>
+            </span>
+            <div class="container">
+                <div class="btn1"><input type="button" (click)="decrementValue(i)" value="-" /></div>
+                <div class="txt1"><input type="text" name="quantity" value="{{item.count}}" maxlength="2" max="10" size="1" id="number" /></div>
+                <div class="btn1"><input type="button" (click)="incrementValue(i)" value="+" /></div>
+            </div>
+            <button type="button" class="btn btn-warning btn-cart" (click)="removeItem(i)">Remove</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="totalCartItems.length>0">
+    <div>Price Details</div>
+    <table>
+        <tr>
+            <td>Price ({{totalCount}} item(s))</td>
+            <td>:</td>
+            <td>₹{{totalPrice}}.00</td>
+        </tr>
+        <tr>
+            <td>Discount</td>
+            <td>:</td>
+            <td>₹{{totalDiscount}}.00</td>
+        </tr>
+        <tr>
+            <td>Total Payable</td>
+            <td>:</td>
+            <td>₹{{totalPrice-totalDiscount}}.00</td>
+        </tr>
+    </table>
+    <!-- <div><span>Price ({{totalCount}} item(s)): </span><span>₹{{totalPrice}}</span></div>
+    <div><span>Discount : </span><span>₹{{totalDiscount}}</span></div>
+    <div><span>Total Payable : ₹{{totalPrice-totalDiscount}}</span></div> -->
+</div>
+<div *ngIf="totalCartItems.length==0">
+    <span>No Items Present in the Cart. Happy shopping!</span>
+</div>
